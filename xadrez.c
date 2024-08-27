@@ -20,7 +20,6 @@ int main(void){
 
     printf("Desafio Jogo de Xadrez\n");
     printf("-----\n");
-    printf("USANDO (FOR):\n");
     printf("Bispo:\n");
     for (int i = 0; i < bispo; i++)
     {
