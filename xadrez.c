@@ -6,9 +6,16 @@ int main(void){
     int posicaoBispoDiagonal=0; //0 cima,1 baixo
     int torre=5; 
     int posicaoTorre=0; //posicao 0 direita,1 esquerda,2 cima ,3 baixo
-    int rainha=8;
+    int rainha=8; 
     int posicaoRainha=1; //posicao 0 direita,1 esquerda,2 cima ,3 baixo
-    int resultado;
+    int rei=1; 
+    int posicaoRei=0;
+    int peao=1; 
+    int posicaoPeao=0;
+    
+    int cavalo=2; //cavalo tem formato em L 2 casas + 1
+    int posicaoCavaloInicio=0;//0 direita,1 esquerda,2 cima,3 baixo
+    int posicaoCavaloFim=2; //0 direita,1 esquerda,2 cima,3 baixo
     
 
     printf("Desafio Jogo de Xadrez\n");
@@ -66,129 +73,55 @@ int main(void){
             printf("Baixo\n");
         }
     }
-
-    printf("USANDO (WHILE):\n");
-    printf("-----\n");
-    printf("Bispo:\n");
-    int m=0;
-    while (m<bispo)
-    {
-        switch (posicaoBispoDiagonal)
+    
+    printf("Cavalo:\n");
+    if(posicaoCavaloInicio==0||posicaoCavaloInicio==1){
+        int ca = 0;
+        while ( ca < 1)
         {
-        case 0:
-            if(posicaoBispo==0){
-            printf("Cima,Direita\n");
-                }else if(posicaoBispo==1){
-                    printf("Cima,Esquerda\n");
+            for (int ga = 0; ga < cavalo;ga++)
+            {
+                if(posicaoCavaloInicio==0 ){
+                printf("Direta");           
+                }else if(posicaoCavaloInicio==1){
+                printf("Esquerda");
                 }
-            break;
-        case 1:
-            if(posicaoBispo==0){
-            printf("Baixo,Direita\n");
-                }else if(posicaoBispo==1){
-                    printf("Baixo,Esquerda\n");
-                }
-            break;
-        
-        default:
-            break;
+                printf(",");
+            }
+            if(posicaoCavaloFim==2){
+                printf("Cima");
+            }else if(posicaoCavaloFim==3){
+                printf("Baixo");
+            }
+            ca++;
         }
-        m++;
-    }
-    printf("Torre:\n");
-    int y=0;
-    while (y<torre)
-    {
-        if(posicaoTorre==0){
-            printf("Direita\n");
-        }else if(posicaoTorre==1){
-            printf("Esquerda\n");
-        }else if(posicaoTorre==2){
-            printf("Cima\n");
-        }else if(posicaoTorre==3){
-            printf("Baixo\n");
-        }
-        y++;
-    }
     
-    printf("Rainha:\n");
-    int w=0;
-    while (w<rainha)
-    {
-        if(posicaoRainha==0){
-            printf("Direita\n");
-        }else if(posicaoRainha==1){
-            printf("Esquerda\n");
-        }else if(posicaoRainha==2){
-            printf("Cima\n");
-        }else if(posicaoRainha==3){
-            printf("Baixo\n");
-        }
-        w++;
-    }
-    
-    printf("USANDO (DO WHILE):\n");
-    printf("-----\n");
-    printf("Bispo:\n");
-    int z=0;
-    do
-    {
-        switch (posicaoBispoDiagonal)
+    }else if(posicaoCavaloInicio==2||posicaoCavaloInicio==3){
+        int ja = 0;
+        while (ja < 1)
         {
-        case 0:
-            if(posicaoBispo==0){
-            printf("Cima,Direita\n");
-                }else if(posicaoBispo==1){
-                    printf("Cima,Esquerda\n");
-                }
-            break;
-        case 1:
-            if(posicaoBispo==0){
-            printf("Baixo,Direita\n");
-                }else if(posicaoBispo==1){
-                    printf("Baixo,Esquerda\n");
-                }
-            break;
+            for (int ya = 0; ya < cavalo;ya++)
+            {
+                if(posicaoCavaloInicio==2 ){
+                printf("Cima");           
+                }else if(posicaoCavaloInicio==3){
+                printf("Baixo");
+                } 
+                printf(","); 
+            }
+            if(posicaoCavaloFim==0){
+                printf("Direita");
+            }else if(posicaoCavaloFim==1){
+                printf("Esquerda");
+            }
+            ja++;
+        }
+
+       
         
-        default:
-            break;
-        }
-        z++;
-    } while (z<bispo);
+    }
 
-    printf("Torre:\n");
-    int a=0;
-    do
-    {
-        if(posicaoTorre==0){
-            printf("Direita\n");
-        }else if(posicaoTorre==1){
-            printf("Esquerda\n");
-        }else if(posicaoTorre==2){
-            printf("Cima\n");
-        }else if(posicaoTorre==3){
-            printf("Baixo\n");
-        }
-        a++;
-    } while (a<torre);
-
-    printf("Rainha:\n");
-    int b=0;
-    do
-    {
-        if(posicaoRainha==0){
-            printf("Direita\n");
-        }else if(posicaoRainha==1){
-            printf("Esquerda\n");
-        }else if(posicaoRainha==2){
-            printf("Cima\n");
-        }else if(posicaoRainha==3){
-            printf("Baixo\n");
-        }
-        b++;   
-    } while (b<rainha);
-    
-    
+    //imprimi o cavalo diferente pois estava assim no documento 
    
     
 
